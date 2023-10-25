@@ -18,4 +18,11 @@ def scaled_dot_production_attention(q, k, v):
 	vals = torch.matmul(attention, v)
 	return vals, attention
 
-	
+
+class multiheadattention(nn.module):
+	def __init__(self, input_dim, embed_dim, number_heads):
+		super().__init__()
+		self.input_dim = input_dim
+		self.embed_dim = embed_dim
+		self. head_dim = embed_dim // number_heads
+		
